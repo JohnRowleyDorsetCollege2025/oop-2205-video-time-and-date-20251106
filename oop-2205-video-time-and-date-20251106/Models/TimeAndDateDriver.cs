@@ -19,12 +19,16 @@ namespace oop_2205_video_time_and_date_20251106.Models
             int daysToEvent = DaysUntilNextChristmas();
             Console.WriteLine($"Days until next Christmas: {daysToEvent}");
 
-        }   
+            DurationAndDeadlineExample();
+
+            ParseDateString();
+
+        }
 
         public static void ShowAppDetails()
         {
-             AppConstants.DisplayAppInfo();
-          
+            AppConstants.DisplayAppInfo();
+
         }
 
         public static void ShowCurrentDateTime()
@@ -43,7 +47,7 @@ namespace oop_2205_video_time_and_date_20251106.Models
             Console.WriteLine($"Short Time: {dateTime.ToShortTimeString()}");
             Console.WriteLine($"Long Time: {dateTime.ToLongTimeString()}");
             Console.WriteLine($"Custom Format: {dateTime.ToString("yyyy-MM-dd HH:mm:ss")}");
-        }   
+        }
 
         public static void ShowDateTimeComponents(DateTime dateTime)
         {
@@ -65,6 +69,25 @@ namespace oop_2205_video_time_and_date_20251106.Models
             }
             TimeSpan difference = nextChristmas - today;
             return difference.Days;
+        }
+
+        public static void DurationAndDeadlineExample()
+        {
+            TimeSpan duration = new TimeSpan(2, 2, 30, 0); // 2 hours and 30 minutes
+
+            DateTime deadline = DateTime.Now + duration;
+
+            Console.WriteLine($"deadline: {deadline}");
+        }
+
+        public static void ParseDateString()
+        {
+            string dateString = "2023-12-25 14:30:00";
+
+            DateTime parsedDate = DateTime.Parse(dateString);
+
+            Console.WriteLine($"Parsed Date and Time: {parsedDate}");
+
         }
 
 
